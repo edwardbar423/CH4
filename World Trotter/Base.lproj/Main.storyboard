@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,11 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="212" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcY-TJ-Ya6">
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Value" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="plg-g6-z87">
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="is really" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0us-lL-28d">
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
@@ -48,15 +47,22 @@
                         <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="1E1-yn-lOr" firstAttribute="centerX" secondItem="N6h-Fq-Tlx" secondAttribute="centerX" id="3hO-RS-zQQ"/>
+                            <constraint firstItem="plg-g6-z87" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Cel-Ks-tQM"/>
+                            <constraint firstItem="plg-g6-z87" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cfw-k9-O4b"/>
                             <constraint firstItem="0us-lL-28d" firstAttribute="centerX" secondItem="N6h-Fq-Tlx" secondAttribute="centerX" id="DhV-Wo-uSz"/>
+                            <constraint firstItem="hip-O0-xNZ" firstAttribute="top" secondItem="1E1-yn-lOr" secondAttribute="bottom" constant="8" id="H0b-Lh-PJ0"/>
+                            <constraint firstItem="0us-lL-28d" firstAttribute="top" secondItem="N6h-Fq-Tlx" secondAttribute="bottom" constant="8" id="JMM-UB-WyP"/>
                             <constraint firstItem="hip-O0-xNZ" firstAttribute="centerX" secondItem="N6h-Fq-Tlx" secondAttribute="centerX" id="MlJ-0Q-Vqv"/>
+                            <constraint firstItem="1E1-yn-lOr" firstAttribute="centerX" secondItem="N6h-Fq-Tlx" secondAttribute="centerX" id="MqX-fQ-xuz"/>
+                            <constraint firstItem="plg-g6-z87" firstAttribute="centerX" secondItem="N6h-Fq-Tlx" secondAttribute="centerX" id="RPD-h8-xkF"/>
+                            <constraint firstItem="hip-O0-xNZ" firstAttribute="centerX" secondItem="N6h-Fq-Tlx" secondAttribute="centerX" id="UP7-Ek-h7p"/>
+                            <constraint firstItem="plg-g6-z87" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="ZtO-tw-Yfm"/>
                             <constraint firstItem="hip-O0-xNZ" firstAttribute="top" secondItem="1E1-yn-lOr" secondAttribute="bottom" constant="8" id="apQ-gr-hlt"/>
-                            <constraint firstItem="TcY-TJ-Ya6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eIm-If-cM2"/>
+                            <constraint firstItem="N6h-Fq-Tlx" firstAttribute="top" secondItem="plg-g6-z87" secondAttribute="bottom" constant="8" id="hbS-qs-Ixu"/>
+                            <constraint firstItem="1E1-yn-lOr" firstAttribute="top" secondItem="0us-lL-28d" secondAttribute="bottom" constant="8" id="ldg-Rz-2SS"/>
                             <constraint firstItem="1E1-yn-lOr" firstAttribute="top" secondItem="0us-lL-28d" secondAttribute="bottom" constant="8" id="lwR-bY-m8b"/>
-                            <constraint firstItem="TcY-TJ-Ya6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="8" id="mrK-0L-a2N"/>
-                            <constraint firstItem="N6h-Fq-Tlx" firstAttribute="top" secondItem="TcY-TJ-Ya6" secondAttribute="bottom" constant="8" id="ssb-ES-tcm"/>
+                            <constraint firstItem="0us-lL-28d" firstAttribute="centerX" secondItem="N6h-Fq-Tlx" secondAttribute="centerX" id="rVO-Lu-N0M"/>
                             <constraint firstItem="0us-lL-28d" firstAttribute="top" secondItem="N6h-Fq-Tlx" secondAttribute="bottom" constant="8" id="ug5-Q4-kHg"/>
-                            <constraint firstItem="TcY-TJ-Ya6" firstAttribute="centerX" secondItem="N6h-Fq-Tlx" secondAttribute="centerX" id="zJV-7r-CUk"/>
                         </constraints>
                     </view>
                 </viewController>

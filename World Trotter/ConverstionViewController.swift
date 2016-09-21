@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ConverstionViewController.swift
 //  World Trotter
 //
 //  Created by Andrew Barber on 9/20/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ConverstionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
