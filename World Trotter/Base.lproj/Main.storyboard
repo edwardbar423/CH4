@@ -6,10 +6,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Converstion View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="World_Trotter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ConverstionViewController" customModule="World_Trotter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -22,6 +22,9 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="fahrenheitFieldEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="jFb-Ba-8H6"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="is really" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0us-lL-28d">
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
@@ -45,6 +48,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="1E1-yn-lOr" firstAttribute="centerX" secondItem="N6h-Fq-Tlx" secondAttribute="centerX" id="3hO-RS-zQQ"/>
                             <constraint firstItem="plg-g6-z87" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Cel-Ks-tQM"/>
@@ -64,9 +68,21 @@
                             <constraint firstItem="0us-lL-28d" firstAttribute="centerX" secondItem="N6h-Fq-Tlx" secondAttribute="centerX" id="rVO-Lu-N0M"/>
                             <constraint firstItem="0us-lL-28d" firstAttribute="top" secondItem="N6h-Fq-Tlx" secondAttribute="bottom" constant="8" id="ug5-Q4-kHg"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="lY8-pD-qov" appends="YES" id="eqI-XB-URs"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="celsiusLabel" destination="1E1-yn-lOr" id="dC7-1b-da0"/>
+                        <outlet property="fahrenheitField" destination="plg-g6-z87" id="sxH-Nn-w6w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="lY8-pD-qov">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="BYZ-38-t0r" id="1UZ-g8-Z5f"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="123.68815592203899"/>
         </scene>
