@@ -9,7 +9,7 @@
 import UIKit
 
 class ConverstionViewController: UIViewController {
-
+    
     //Variables here, things that store data
     
     @IBOutlet var celsiusLabel: UILabel!
@@ -26,25 +26,29 @@ class ConverstionViewController: UIViewController {
         
         
         // let or var | name | : | type | = value
-    
+        
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     //Actions
     
     
     @IBAction func fahrenheitFieldEditingChanged(_ sender: UITextField) {
         
-        if let text = sender.text, let value = Double(text) {
-
-            self.fahrenheitValue = value
+        if let text = sender.text, let num : NSNumber = ConverstionViewController.numberFormatter.number(from: text) {
+           
+            self.fahrenheitValue = num.doubleValue
             self.celsiusValue = convertedFahrenheit(value: self.fahrenheitValue)
             updateCelsiusLabel()
+    
+        } else {
+            
+            self.celsiusLabel.text = "???"
         }
     }
 
@@ -52,18 +56,44 @@ class ConverstionViewController: UIViewController {
         self.fahrenheitField.resignFirstResponder()
     }
     //Conversion Methods
-    
+
     func convertedCelsius(value: Double) -> Double {
-        return value - 32 * (5.0 / 9.0)
+        return (value + 32) * (9.0 / 5.0)
     }
-    
+
     func convertedFahrenheit(value: Double) -> Double {
-        return value * (9.0/5.0) + 32
+        return (value - 32) * (5.0 / 9.0)
     }
-    
+
     func updateCelsiusLabel() {
-        self.celsiusLabel.text = "\(self.celsiusValue)"
+        self.celsiusLabel.text = ConverstionViewController.numberFormatter.string(from: NSNumber(value: celsiusValue))
     }
-    
+
+    static let numberFormatter : NumberFormatter = {
+        
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.minimumFractionDigits = 0
+        formatter.maximumFractionDigits = 1
+        return formatter
+    } ()
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
