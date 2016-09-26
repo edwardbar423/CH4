@@ -86,10 +86,15 @@ extension ConverstionViewController: UITextFieldDelegate {
         
         let existingRange : Range? = (textField.text?.range(of: "."))
         let newRange : Range? = string.range(of: ".")
+        let noCharacters : Range? = string.rangeOfCharacter(from: CharacterSet.letters)
+        
         
         if existingRange != nil && newRange != nil {
             return false
-        } else {
+        } else if noCharacters != nil {
+            return false
+        }
+        else {
             return true
         }
     }
