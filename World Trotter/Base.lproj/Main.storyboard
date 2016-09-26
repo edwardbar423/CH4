@@ -86,5 +86,18 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="123.68815592203899"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="mIi-QF-6EZ">
+            <objects>
+                <viewController id="y4S-Dm-vd5" sceneMemberID="viewController">
+                    <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="oPo-hZ-pDx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </mapView>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7el-Aa-Mc3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1622" y="124"/>
+        </scene>
     </scenes>
 </document>

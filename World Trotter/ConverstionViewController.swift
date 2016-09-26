@@ -24,6 +24,7 @@ class ConverstionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        fahrenheitField.delegate = self
         
         // let or var | name | : | type | = value
         
@@ -79,6 +80,21 @@ class ConverstionViewController: UIViewController {
     } ()
 }
 
+extension ConverstionViewController: UITextFieldDelegate {
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let existingRange : Range? = (textField.text?.range(of: "."))
+        let newRange : Range? = string.range(of: ".")
+        
+        if existingRange != nil && newRange != nil {
+            return false
+        } else {
+            return true
+        }
+    }
+
+}
 
 
 
