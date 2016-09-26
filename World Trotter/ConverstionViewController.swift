@@ -22,7 +22,9 @@ class ConverstionViewController: UIViewController {
     //view lifecycle starts here.
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        print("I'm calling you baby")
         
         fahrenheitField.delegate = self
         
