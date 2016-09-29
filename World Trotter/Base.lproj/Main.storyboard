@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,7 +27,7 @@
                                     <action selector="fahrenheitFieldEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="jFb-Ba-8H6"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="is really" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0us-lL-28d">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="is really" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0us-lL-28d">
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -41,7 +42,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="degrees fahrenheit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6h-Fq-Tlx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="degrees fahrenheit" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6h-Fq-Tlx">
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -50,7 +51,10 @@
                         <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="hip-O0-xNZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1WB-aF-mZf"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="0us-lL-28d" secondAttribute="trailing" id="3Q0-aj-BaT"/>
                             <constraint firstItem="1E1-yn-lOr" firstAttribute="centerX" secondItem="N6h-Fq-Tlx" secondAttribute="centerX" id="3hO-RS-zQQ"/>
+                            <constraint firstItem="0us-lL-28d" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="7XC-Mf-5Nc"/>
                             <constraint firstItem="plg-g6-z87" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Cel-Ks-tQM"/>
                             <constraint firstItem="plg-g6-z87" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cfw-k9-O4b"/>
                             <constraint firstItem="0us-lL-28d" firstAttribute="centerX" secondItem="N6h-Fq-Tlx" secondAttribute="centerX" id="DhV-Wo-uSz"/>
@@ -59,12 +63,15 @@
                             <constraint firstItem="hip-O0-xNZ" firstAttribute="centerX" secondItem="N6h-Fq-Tlx" secondAttribute="centerX" id="MlJ-0Q-Vqv"/>
                             <constraint firstItem="1E1-yn-lOr" firstAttribute="centerX" secondItem="N6h-Fq-Tlx" secondAttribute="centerX" id="MqX-fQ-xuz"/>
                             <constraint firstItem="plg-g6-z87" firstAttribute="centerX" secondItem="N6h-Fq-Tlx" secondAttribute="centerX" id="RPD-h8-xkF"/>
-                            <constraint firstItem="hip-O0-xNZ" firstAttribute="centerX" secondItem="N6h-Fq-Tlx" secondAttribute="centerX" id="UP7-Ek-h7p"/>
+                            <constraint firstItem="hip-O0-xNZ" firstAttribute="centerX" relation="greaterThanOrEqual" secondItem="N6h-Fq-Tlx" secondAttribute="centerX" id="UP7-Ek-h7p"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="N6h-Fq-Tlx" secondAttribute="trailing" id="XNo-DW-eMx"/>
                             <constraint firstItem="plg-g6-z87" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="ZtO-tw-Yfm"/>
-                            <constraint firstItem="hip-O0-xNZ" firstAttribute="top" secondItem="1E1-yn-lOr" secondAttribute="bottom" constant="8" id="apQ-gr-hlt"/>
+                            <constraint firstItem="hip-O0-xNZ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1E1-yn-lOr" secondAttribute="bottom" id="apQ-gr-hlt"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="hip-O0-xNZ" secondAttribute="trailing" id="cea-Nh-AUZ"/>
                             <constraint firstItem="N6h-Fq-Tlx" firstAttribute="top" secondItem="plg-g6-z87" secondAttribute="bottom" constant="8" id="hbS-qs-Ixu"/>
                             <constraint firstItem="1E1-yn-lOr" firstAttribute="top" secondItem="0us-lL-28d" secondAttribute="bottom" constant="8" id="ldg-Rz-2SS"/>
                             <constraint firstItem="1E1-yn-lOr" firstAttribute="top" secondItem="0us-lL-28d" secondAttribute="bottom" constant="8" id="lwR-bY-m8b"/>
+                            <constraint firstItem="N6h-Fq-Tlx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="nle-bu-zWa"/>
                             <constraint firstItem="0us-lL-28d" firstAttribute="centerX" secondItem="N6h-Fq-Tlx" secondAttribute="centerX" id="rVO-Lu-N0M"/>
                             <constraint firstItem="0us-lL-28d" firstAttribute="top" secondItem="N6h-Fq-Tlx" secondAttribute="bottom" constant="8" id="ug5-Q4-kHg"/>
                         </constraints>
@@ -85,17 +92,17 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-884" y="958"/>
+            <point key="canvasLocation" x="422" y="435"/>
         </scene>
         <!--Map-->
         <scene sceneID="mIi-QF-6EZ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7el-Aa-Mc3" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="y4S-Dm-vd5" customClass="MapViewController" customModule="World_Trotter" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="M8K-mS-2Os"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7el-Aa-Mc3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130" y="124"/>
+            <point key="canvasLocation" x="422" y="-284"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="SBD-i8-T1l">
@@ -103,6 +110,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="xTt-g0-rlZ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="kj8-EO-U6w">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>

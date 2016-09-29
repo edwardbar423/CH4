@@ -1,25 +1,18 @@
 //
-//  ConverstionViewController.swift
-//  World Trotter
-//
-//  Created by Andrew Barber on 9/20/16.
 //  Copyright © 2016 Invictus. All rights reserved.
 //
 
 import UIKit
 
-class ConverstionViewController: UIViewController {
-    
-    //Variables here, things that store data
+class ConverstionViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var celsiusLabel: UILabel!
-    
     @IBOutlet var fahrenheitField: UITextField!
     
-    var fahrenheitValue : Double = 0.0
-    var celsiusValue : Double = 0.0
+    var fahrenheitValue : Double?
+    var celsiusValue : Double?
     
-    //view lifecycle starts here.
+    //MARK : View lifecycle starts here.
     
     override func viewDidLoad() {
         
@@ -27,8 +20,6 @@ class ConverstionViewController: UIViewController {
         print("I'm calling you baby")
         
         fahrenheitField.delegate = self
-        
-        // let or var | name | : | type | = value
         
         
     }
@@ -43,64 +34,68 @@ class ConverstionViewController: UIViewController {
     
     @IBAction func fahrenheitFieldEditingChanged(_ sender: UITextField) {
         
-        if let text = sender.text, let num : NSNumber = ConverstionViewController.numberFormatter.number(from: text) {
-           
+        if let text = textField.text, let num : NSNumber = ConverstionViewController.numberFormatter.number(from: text) {
+            
             self.fahrenheitValue = num.doubleValue
-            self.celsiusValue = convertedFahrenheit(value: self.fahrenheitValue)
+            self.celsiusValue = convertedFahrenheit(value: self.fahrenheitValue?)
             updateCelsiusLabel()
-    
+            
         } else {
             
             self.celsiusLabel.text = "???"
         }
     }
-
+    
     @IBAction func dismissKeyboard(_ sender: AnyObject) {
         self.fahrenheitField.resignFirstResponder()
     }
-    //Conversion Methods
-
+    //MARK : Conversion Methods
+    
     func convertedCelsius(value: Double) -> Double {
         return (value + 32) * (9.0 / 5.0)
     }
-
+    
     func convertedFahrenheit(value: Double) -> Double {
         return (value - 32) * (5.0 / 9.0)
     }
-
-    func updateCelsiusLabel() {
-        self.celsiusLabel.text = ConverstionViewController.numberFormatter.string(from: NSNumber(value: celsiusValue))
-    }
-
-    static let numberFormatter : NumberFormatter = {
+    
+    let numberFormatter : NumberFormatter = {
         
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        formatter.minimumFractionDigits = 0
-        formatter.maximumFractionDigits = 1
-        return formatter
+        let f = NumberFormatter()
+        f.numberStyle = .decimal
+        f.minimumFractionDigits = 0
+        f.maximumFractionDigits = 1
+        return f
     } ()
+    
+    func updateCelsiusLabel() {
+        if celsiusValue != nil {
+            celsiusLabel.text = numberFormatter.string(from: NSNumber(value: celsiusValue))
+        } else {
+            celsiusLabel.text = "???"
+        }
+    }
+    
+    
 }
 
-extension ConverstionViewController: UITextFieldDelegate {
-
+extension ConverstionViewController {
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        let existingRange : Range? = (textField.text?.range(of: "."))
-        let newRange : Range? = string.range(of: ".")
-        let noCharacters : Range? = string.rangeOfCharacter(from: CharacterSet.letters)
+        let currentLocale = NSLocale.current
+        let decimalSeparator = (currentLocale as NSLocale).object(forKey: NSLocale.Key.decimalSeparator) as! String
+        let existingTextHasDecimalSeparator = textField.text?.range(of: decimalSeparator)
+        let replacementTextHasDecimalSeparator = string.range(of: decimalSeparator)
         
         
-        if existingRange != nil && newRange != nil {
+        if existingTextHasDecimalSeparator != nil && replacementTextHasDecimalSeparator != nil {
             return false
-        } else if noCharacters != nil {
-            return false
-        }
-        else {
+        } else {
             return true
         }
     }
-
+    
 }
 
 
