@@ -34,15 +34,16 @@ class ConverstionViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func fahrenheitFieldEditingChanged(_ sender: UITextField) {
         
-        if let text = textField.text, let num : NSNumber = ConverstionViewController.numberFormatter.number(from: text) {
+        print("f value = \(fahrenheitValue)")
+        if let text = sender.text, let num : NSNumber = numberFormatter.number(from: text) {
             
             self.fahrenheitValue = num.doubleValue
-            self.celsiusValue = convertedFahrenheit(value: self.fahrenheitValue?)
+            self.celsiusValue = convertedFahrenheit(value: fahrenheitValue!)
             updateCelsiusLabel()
             
         } else {
             
-            self.celsiusLabel.text = "???"
+            self.celsiusLabel.text = "?????"
         }
     }
     
@@ -69,7 +70,7 @@ class ConverstionViewController: UIViewController, UITextFieldDelegate {
     } ()
     
     func updateCelsiusLabel() {
-        if celsiusValue != nil {
+        if let celsiusValue = celsiusValue {
             celsiusLabel.text = numberFormatter.string(from: NSNumber(value: celsiusValue))
         } else {
             celsiusLabel.text = "???"
@@ -81,7 +82,7 @@ class ConverstionViewController: UIViewController, UITextFieldDelegate {
 
 extension ConverstionViewController {
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    @objc(textField:shouldChangeCharactersInRange:replacementString:) func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         let currentLocale = NSLocale.current
         let decimalSeparator = (currentLocale as NSLocale).object(forKey: NSLocale.Key.decimalSeparator) as! String
